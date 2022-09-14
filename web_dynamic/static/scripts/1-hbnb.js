@@ -3,9 +3,9 @@ $( document ).ready(function(){
     $('input[type="checkbox"]').change(function() {
         if (this.checked === true) {
             amenity_dic[$(this).attr('data-id')] = $(this).attr('data-name');
-            $('.amenities h4').text(amenity_dic[$(this).attr('data-id')].join(", "))
         } else {
             delete amenity_dic[$(this).attr('data-id')]
         }
+        $('.amenities h4').text(Object.values(amenity_dic).join(", "))
     });
 });
